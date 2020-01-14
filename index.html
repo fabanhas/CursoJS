@@ -36,14 +36,65 @@
 
         // Exercicio 3
         function temHabilidade(skills) {
-            var skills;
-            if(skills.indexOf(0) === 'Javascript'){
-                console.log('ok');
+            var skill = skills;
+            // var x = skill.length;
+            for(x=0; x<skill.length; x++){
+                if(skill[x].indexOf('Javascript') !== -1){
+                    return true;
+                }
             }
+            return false;
+         
         }
         var skills = ["Javascript", "ReactJS", "React Native"];
-        temHabilidade(skills); // true ou false
+        var result = temHabilidade(skills); // true ou false
+        console.log(result);
 
+        // Exercicio 4
+        function experiencia(anos) {
+            if(anos < 2){
+                console.log('Iniciante');
+                return;
+            }else if(anos < 4){
+                console.log('Intermediario')
+                return;
+            }
+            else if(anos < 7){
+                console.log('Avançado')
+                return;
+            }
+            else if(anos >= 7){
+                console.log('Jedi')
+                return;
+            }
+        // código aqui
+        }
+        var anosEstudo = 98;
+        experiencia(anosEstudo);
+
+
+        // Exercicio 5 
+        
+        function habilidades(usuarios){
+            var texto;
+            var habilidades;
+            for(i=0; i<usuarios.length; i++){
+                texto = 'O '+usuarios[i].nome+' possui as habilidades';
+                console.log('O '+usuarios[i].nome+' possui as habilidades: '+usuarios[i].habilidades.join([separador = ', ']));
+            }
+        }
+
+        var usuarios = [
+            {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+        habilidades(usuarios);
     </script>
 </body>
 </html>
