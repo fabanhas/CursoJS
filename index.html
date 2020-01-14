@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curso JS</title>
+</head>
+<body>
+    
+
+    <script>
+        // Exercicio 1
+        var endereco = {
+        rua: "Rua dos pinheiros",
+        numero: 1293,
+        bairro: "Centro",
+        cidade: "São Paulo",
+        uf: "SP"
+        };
+        console.log('O usuário mora em '+endereco.cidade+ ' / '+endereco.uf+ ', no bairro '+endereco.bairro+ ', na rua '+endereco.rua+ ' com nº '+endereco.numero+ '.');
+        
+
+        // Exercicio 2
+        function pares(x, y) {
+            var x, y, atual;
+            while(x < y){
+                atual = x;
+                if(atual % 2 == 0){
+                    console.log(atual);
+                }
+                x++;
+            }
+        }
+        pares(32, 321);
+
+        // Exercicio 3
+        function temHabilidade(skills) {
+            var skills;
+            if(skills.indexOf(0) === 'Javascript'){
+                console.log('ok');
+            }
+        }
+        var skills = ["Javascript", "ReactJS", "React Native"];
+        temHabilidade(skills); // true ou false
+
+    </script>
+</body>
+</html>
