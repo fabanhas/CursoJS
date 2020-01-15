@@ -8,8 +8,17 @@
 </head>
 <body>
     
-
+    <div id="exec2">
+        <button class="adicionar-btn">
+            Adicionar caixa
+        </button>
+    </div>
+    <div id="exec4">
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
+    </div>
     <script>
+        // Desafio 1
         // Exercicio 1
         var endereco = {
         rua: "Rua dos pinheiros",
@@ -95,6 +104,60 @@
             }
         ];
         habilidades(usuarios);
+
+
+        // Desafio 2
+        // Exercicio 1
+        var btn = document.getElementsByClassName('adicionar-btn')[0];
+        btn.onclick = function(){
+            
+            var caixa = document.createElement('div');
+            caixa.style.cssText = "width:100px; height:100px; background-color: red; margin: 1rem 0;";
+            caixa.classList.add("caixa");
+            caixa.setAttribute('onmouseover', 'trocaCor(this)');
+
+            var divAtual = document.getElementById("exec2"); 
+            divAtual.appendChild(caixa);
+        }
+        // Exercicio 2 
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function trocaCor(obj){
+            var newColor = getRandomColor(); // #E943F0
+            obj.style.backgroundColor = newColor;
+        }
+        
+
+        // Exercicio 3
+        
+        window.addEventListener("load", function(event) {
+            
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+            var lista = document.createElement('ul');
+            for(i=0; i<nomes.length; i++){
+                var nome = document.createElement('li');
+                nome.innerHTML = nomes[i];
+                lista.appendChild(nome);
+            }
+            document.querySelector('#exec4').appendChild(lista);
+        });
+
+
+        // Exercicio 4
+        function adicionar(){
+            var text = document.querySelector('input[name="nome"]').value;
+            var item = document.createElement('li');
+            item.innerHTML = text;
+            document.querySelector('#exec4 ul').append(item);
+            document.querySelector('[name="nome"').value ='';
+        }
     </script>
 </body>
 </html>
